@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gavin Kahanda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Play:wght@400;700&family=Righteous&family=Rubik+Lines&family=Space+Grotesk:wght@300..700&family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lexend:wght@100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Smooch+Sans:wght@100..900&family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+      /* Critical CSS to hide sidebar on load */
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed !important;
+          right: -100% !important;
+          left: auto !important;
+          top: 0 !important;
+          pointer-events: none !important;
+          visibility: hidden !important;
+          transform: translateX(0) !important;
+        }
+        .nav-links:not(.active) {
+          display: flex !important;
+          right: -100% !important;
+        }
+        .sidebar-overlay {
+          display: none !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+        }
+        .hamburger {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Immediately hide sidebar before any rendering
+      (function() {
+        window.addEventListener('DOMContentLoaded', function() {
+          var nav = document.querySelector('.nav-links');
+          var overlay = document.querySelector('.sidebar-overlay');
+          var hamburger = document.querySelector('.hamburger');
+          if (nav) nav.classList.remove('active');
+          if (overlay) overlay.classList.remove('active');
+          if (hamburger) hamburger.classList.remove('active');
+        });
+      })();
+    </script>
+    <nav class="navbar">
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#connect" class="nav-link">Connect</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-overlay"></div>
+    <div id="app"></div>
+    <div id="home" class="container">
+      <div class="left">
+        <div class="glass-card">
+          <img src="/gavin2.png" alt="Gavin Kahanda" />
+        </div>
+      </div>
+      <div class="right">
+        <div class="content">
+          <h1 class="hero-name">GAVIN<br>KAHANDA</h1>
+          <p id="description-text">Software Engineer Undergraduate</p>
+          <p class="small-description">Passionate about crafting innovative software solutions.<br>Continuously learning and building to make an impact.</p>
+          <div class="social-links">
+            <a href="https://github.com/dgavink" target="_blank" aria-label="GitHub: dgavink" data-username="dgavink">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.922.43.369.812 1.101.812 2.219v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/gavin-kahanda-642314273" target="_blank" aria-label="LinkedIn: gavin-kahanda-642314273" data-username="gavin-kahanda">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M22.23 0H1.77C.79 0 0 .79 0 1.77v20.46C0 23.21.79 24 1.77 24h20.46c.98 0 1.77-.79 1.77-1.77V1.77c0-.98-.79-1.77-1.77-1.77zM7.18 20.45H3.61V8.65h3.57v11.8zM5.39 7.28c-1.27 0-2.07-.86-2.07-1.92 0-1.07.8-1.92 2.07-1.92s2.07.85 2.07 1.92c0 1.06-.8 1.92-2.07 1.92zm15.01 13.17h-3.57v-5.74c0-1.37-.49-2.3-1.71-2.3-1.16 0-1.85.78-2.15 1.54-.11.27-.14.65-.14 1.03v5.47h-3.57s.05-10.74 0-11.8h3.57v1.61c.47-.74 1.34-1.8 3.22-1.8 2.34 0 4.09 1.53 4.09 4.82v7.37z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="about" class="about-section fade-in-section">
+      <h2 class="fade-in-section">About</h2>
+      <div class="about-container fade-in-section">
+        <div class="about-column">
+          <h3>About Me</h3>
+          <p id="about-me-description">Results-driven and detail-oriented Software Engineer with strong expertise in full-stack development, object-oriented programming, and database management. Skilled in designing, developing, and deploying scalable web and mobile applications using modern frameworks such as Laravel, React, and Node.js. Proficient in multiple programming languages including Java, C++, JavaScript, and PHP. Demonstrated ability to collaborate in agile environments, solve complex technical problems, and deliver high-quality solutions on time. Passionate about clean code, innovation, and continuous learning in emerging technologies such as cloud computing and AI-driven applications.</p>
+        </div>
+        <div class="about-column">
+          <h3>Education</h3>
+          <div class="education-item">
+            <h4>Bsc hons in Software engineering.</h4>
+            <p>Lanka Nippon Biztech Institute, Maharagama</p>
+            <p>2023 – Present</p>
+          </div>
+          <div class="education-item">
+            <h4>G.C.E. Advanced Level (Physical Sciences)</h4>
+            <p>Royal College Colombo 07</p>
+            <p>2020 – 2023</p>
+          </div>
+          <div class="education-item">
+            <h4>G.C.E. Ordinary Level</h4>
+            <p>St. Joseph's College Colombo 10</p>
+            <p>2014 – 2020</p>
+          </div>
+        </div>
+        <div class="about-column">
+          <h3>Skills</h3>
+          <h4>Technical Skills</h4>
+          <p><strong>Programming Languages:</strong> Java, Python, C++, C#, Javascript, PHP</p>
+          <p><strong>Web Development:</strong> HTML, CSS, Javascript</p>
+          <p><strong>Frameworks and Libraries:</strong> .NET, Bootstrap, Tailwind, Laravel, React, Java Springboot</p>
+          <p><strong>Databases:</strong> MySQL, PostgreSQL, MariaDB, MongoDB</p>
+          <p><strong>Version Control:</strong> Git, Github</p>
+          <p><strong>Software Development Methodologies:</strong> Agile, Scrum, Waterfall, TDD (Test-Driven Development)</p>
+          <p><strong>Testing & Debugging Tools:</strong> Bugzilla, Selenium, Postman</p>
+          <h4>Soft Skills</h4>
+          <p>Problem Solving | Collaboration | Time Management | Communication | Critical Thinking</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGIES MARQUEE SECTION -->
+    <section class="tech-marquee-section">
+      <div class="marquee">
+        <div class="marquee-content">
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-logo">
+            <span class="tech-name">React</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" class="tech-logo">
+            <span class="tech-name">Laravel</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" class="tech-logo">
+            <span class="tech-name">Spring Boot</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="tech-logo">
+            <span class="tech-name">PHP</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="tech-logo">
+            <span class="tech-name">Angular</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-logo">
+            <span class="tech-name">Node.js</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-logo">
+            <span class="tech-name">JavaScript</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="tech-logo">
+            <span class="tech-name">TypeScript</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="tech-logo">
+            <span class="tech-name">PostgreSQL</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tech-logo">
+            <span class="tech-name">MongoDB</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-logo">
+            <span class="tech-name">Docker</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="tech-logo">
+            <span class="tech-name">AWS</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-logo">
+            <span class="tech-name">Git</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-logo">
+            <span class="tech-name">Java</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="tech-logo">
+            <span class="tech-name">C++</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+            <span class="tech-name">Python</span>
+          </div>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-logo">
+            <span class="tech-name">React</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" class="tech-logo">
+            <span class="tech-name">Laravel</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" class="tech-logo">
+            <span class="tech-name">Spring Boot</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="tech-logo">
+            <span class="tech-name">PHP</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="tech-logo">
+            <span class="tech-name">Angular</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-logo">
+            <span class="tech-name">Node.js</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-logo">
+            <span class="tech-name">JavaScript</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="tech-logo">
+            <span class="tech-name">TypeScript</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="tech-logo">
+            <span class="tech-name">PostgreSQL</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tech-logo">
+            <span class="tech-name">MongoDB</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-logo">
+            <span class="tech-name">Docker</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="tech-logo">
+            <span class="tech-name">AWS</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-logo">
+            <span class="tech-name">Git</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-logo">
+            <span class="tech-name">Java</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="tech-logo">
+            <span class="tech-name">C++</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+            <span class="tech-name">Python</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section fade-in-section">
+      <h2 class="fade-in-section">Featured Projects</h2>
+      <p class="projects-description">Showcasing some of my innovative solutions that blend cutting-edge technology with real-world impact</p>
+
+      <div class="projects-grid">
+        <!-- Project 1: Apparel Genesis -->
+        <div class="project-item apparelgenesis-card" data-aos="fade-up">
+            <span class="project-status-badge">Repository</span>
+            <div class="apparelgenesis-text-content">
+                <div class="project-header">
+                    <h3>Apparel Genesis</h3>
+
+                </div>
+                <p class="project-tagline">RFID-based Garment Inbound Verification and Inventory Controlling System</p>
+                <p class="project-description">An industrial-based software and hardware integrated solution for automated garment verification and inventory management using RFID and barcode technologies.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">RFID</span>
+                    <span class="tech-tag">IoT</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" onclick="openProjectModal('apparelgenesis'); return false;">View Project →</a>
+                </div>
+            </div>
+            <div class="apparelgenesis-image-content">
+                <img src="/apparel.png" alt="Apparel Genesis App Screenshot">
+            </div>
+        </div>
+
+        <!-- Project 2: Rydora -->
+        <div class="project-item rydora-card" data-aos="fade-up">
+            <span class="project-status-badge">Repository</span>
+            <div class="rydora-text-content">
+                <div class="project-header">
+                    <h3>Rydora</h3>
+
+                </div>
+                <p class="project-tagline">AI-Optimized Expressway Bus Transit Safety and Efficiency System</p>
+                <p class="project-description">Developed a mobile application for public expressway bus transportation focused on passenger safety and efficiency.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React JS</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Supabase</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" onclick="openProjectModal('rydora'); return false;">View Project →</a>
+                </div>
+            </div>
+            <div class="rydora-image-content">
+                <img src="/rydora.png" alt="Rydora App Screenshot">
+            </div>
+        </div>
+
+        <!-- Project 2: Flymate -->
+        <div class="project-item flymate-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="project-status-badge">Repository</span>
+            <div class="flymate-text-content">
+                <div class="project-header">
+                    <h3>Flymate</h3>
+
+                </div>
+                <p class="project-tagline">Online Flight Tracking and AirTicket Booking Enterprise Platform</p>
+                <p class="project-description">Built a more reliable platform to book flight tickets and track flights from one space, using React JS and Java Springboot.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React JS</span>
+                    <span class="tech-tag">Java Spring Boot</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" onclick="openProjectModal('flymate'); return false;">View Project →</a>
+                </div>
+            </div>
+            <div class="flymate-image-content">
+                <img src="/flymate.png" alt="Flymate App Screenshot">
+            </div>
+        </div>
+
+        <!-- Project 3: JusticeHire -->
+        <div class="project-item justicehire-card" data-aos="fade-up" data-aos-delay="200">
+            <span class="project-status-badge">Repository</span>
+            <div class="justicehire-text-content">
+                <div class="project-header">
+                    <h3>JusticeHire</h3>
+
+                </div>
+                <p class="project-tagline">Website to Hire Attorneys Online</p>
+                <p class="project-description">A full-stack web application designed to revolutionize the legal hiring process in Sri Lanka. This platform enables clients to find, consult, and hire attorneys online.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Full-Stack</span>
+                    <span class="tech-tag">Web Development</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" onclick="openProjectModal('justicehire'); return false;">View Project →</a>
+                </div>
+            </div>
+            <div class="justicehire-image-content">
+                <img src="/justicehire.png" alt="JusticeHire App Screenshot">
+            </div>
+        </div>
+
+        <!-- Project 4: NexusGalleria -->
+        <div class="project-item nexusgalleria-card" data-aos="fade-up" data-aos-delay="300">
+            <span class="project-status-badge">Repository</span>
+            <div class="nexusgalleria-text-content">
+                <div class="project-header">
+                    <h3>NexusGalleria</h3>
+
+                </div>
+                <p class="project-tagline">Desktop Application for a Virtual Art Gallery & Auction</p>
+                <p class="project-description">Created a desktop app to buy and sell artworks through both direct and auction methods. Built using C++.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Desktop App</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" onclick="openProjectModal('nexusgalleria'); return false;">View Project →</a>
+                </div>
+            </div>
+            <div class="nexusgalleria-image-content">
+                <img src="/nexus.png" alt="NexusGalleria App Screenshot">
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="certifications-section fade-in-section">
+      <h2 class="fade-in-section">Certifications</h2>
+      <p class="certifications-description">These are some of my key achievements and recognitions that showcase my dedication and expertise</p>
+      <div class="certifications-grid">
+        <!-- Certification 1 -->
+        <div class="certification-item" data-aos="fade-up">
+          <div class="cert-image-placeholder"><img src="/c1.jfif" alt="Certification Image 1" id="cert-img-1" class="cert-img"></div>
+          <div class="cert-content">
+            <h3>Best Paper and Presentation on Jasper Research Symposium 2025</h3>
+            <h4>Lanka Nippon BizTech Institute</h4>
+            <p>Best Presenter on AI and Data Science Track</p>
+          </div>
+        </div>
+        <!-- Certification 2 -->
+        <div class="certification-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="cert-image-placeholder"><img src="/c2.png" alt="Certification Image 2" id="cert-img-2" class="cert-img"></div>
+            <div class="cert-content">
+              <h3>Uni CTF v1.0 Capture the Flag</h3>
+              <h4>Lanka Nippon BizTech Institute</h4>
+              <p>Placed 1st</p>
+            </div>
+        </div>
+        <!-- Certification 3 -->
+        <div class="certification-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="cert-image-placeholder"><img src="/c3.jfif" alt="Certification Image 3" id="cert-img-3" class="cert-img"></div>
+            <div class="cert-content">
+              <h3>Excellence in Creative Team Pit Garage</h3>
+              <h4>GridX STEAM Motorsports Challenge 2025 by JW Networks</h4>
+              <p>Most Creative Team Pit</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LET'S CONNECT SECTION -->
+    <section id="connect" class="connect-section fade-in-section">
+      <div class="connect-background-text">CONNECT</div>
+      <div class="connect-box fade-in-section">
+        <div class="connect-header">
+        </div>
+
+        <p class="connect-intro-message">Let's turn ideas into<br><span class="reality-highlight">Reality!</span></p>
+
+        <h2 class="connect-main-title">LET'S<br>CONNECT.</h2>
+
+        <div class="connect-actions">
+          <a href="#" class="send-message-btn" onclick="openMessageModal(); return false;">
+            <span>SEND A MESSAGE</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 16 16 12 12 8"></polyline>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </a>
+
+          <div class="social-icons-minimal">
+            <a href="https://github.com/dgavink" target="_blank" aria-label="GitHub" class="social-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.922.43.369.812 1.101.812 2.219v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/gavin-kahanda-642314273" target="_blank" aria-label="LinkedIn" class="social-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.23 0H1.77C.79 0 0 .79 0 1.77v20.46C0 23.21.79 24 1.77 24h20.46c.98 0 1.77-.79 1.77-1.77V1.77c0-.98-.79-1.77-1.77-1.77zM7.18 20.45H3.61V8.65h3.57v11.8zM5.39 7.28c-1.27 0-2.07-.86-2.07-1.92 0-1.07.8-1.92 2.07-1.92s2.07.85 2.07 1.92c0 1.06-.8 1.92-2.07 1.92zm15.01 13.17h-3.57v-5.74c0-1.37-.49-2.3-1.71-2.3-1.16 0-1.85.78-2.15 1.54-.11.27-.14.65-.14 1.03v5.47h-3.57s.05-10.74 0-11.8h3.57v1.61c.47-.74 1.34-1.8 3.22-1.8 2.34 0 4.09 1.53 4.09 4.82v7.37z"/>
+              </svg>
+            </a>
+            <a href="mailto:dgavink12@gmail.com" aria-label="Email" class="social-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/712186656" target="_blank" aria-label="WhatsApp" class="social-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Details Modal (Instagram Style) -->
+    <div id="project-detail-modal" class="project-detail-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-container">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-content-wrapper">
+          <!-- Left Side: Photo Gallery -->
+          <div class="modal-left">
+            <div class="photo-gallery">
+              <img id="modal-main-photo" src="" alt="Project Photo" class="main-photo">
+              <div class="photo-thumbnails">
+                <!-- Thumbnails will be added dynamically -->
+              </div>
+            </div>
+          </div>
+          <!-- Right Side: Project Details -->
+          <div class="modal-right">
+            <div class="project-info">
+              <h2 id="modal-project-title">Project Title</h2>
+              <p id="modal-project-tagline" class="modal-tagline"></p>
+              <div class="status-badge">
+                <span id="modal-project-status">Status</span>
+              </div>
+              <div class="modal-section">
+                <h3>Description</h3>
+                <p id="modal-project-description"></p>
+              </div>
+              <div class="modal-section">
+                <h3>Technologies</h3>
+                <div id="modal-tech-stack" class="modal-tech-stack">
+                  <!-- Tech tags will be added dynamically -->
+                </div>
+              </div>
+              <div class="modal-section">
+                <h3>Project Links</h3>
+                <div class="modal-links">
+                  <a id="modal-github-link" href="#" target="_blank" class="modal-btn github-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.922.43.369.812 1.101.812 2.219v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                  </a>
+                  <a id="modal-live-link" href="#" target="_blank" class="modal-btn live-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    View Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div id="message-modal" class="message-modal">
+      <div class="modal-overlay"></div>
+      <div class="message-modal-container">
+        <button class="modal-close-btn" onclick="closeMessageModal()">&times;</button>
+        <div class="message-modal-content">
+          <div class="message-modal-header">
+            <h2>Send a Message</h2>
+            <p>Let's discuss your project or just say hello!</p>
+          </div>
+          <form id="contact-form" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="your.email@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="What's this about?" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="6" placeholder="Tell me about your project or idea..." required></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+              <button type="button" class="cancel-btn" onclick="closeMessageModal()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certification Image Modal -->
+    <div id="cert-image-modal" class="image-modal">
+      <span class="close-image-modal">&times;</span>
+      <img class="image-modal-content" id="modal-cert-image">
+    </div>
+
+    <div class="glowing-circle"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
