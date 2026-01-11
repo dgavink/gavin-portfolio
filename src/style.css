@@ -261,12 +261,12 @@ background-clip: text;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 5px;
   z-index: 1001;
   flex-direction: column;
-  gap: 5px;
-  width: 35px;
-  height: 35px;
+  gap: 3px;
+  width: 28px;
+  height: 28px;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -274,25 +274,25 @@ background-clip: text;
 
 .hamburger span {
   display: block;
-  width: 25px;
-  height: 3px;
+  width: 20px;
+  height: 2px;
   background: white;
-  border-radius: 3px;
+  border-radius: 2px;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
-  transform: translateX(20px);
+  transform: translateX(15px);
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Sidebar Overlay */
@@ -318,11 +318,16 @@ background-clip: text;
   display: block;
 }
 
+/* Hide sidebar header on desktop */
+.sidebar-header {
+  display: none;
+}
+
 /* Mobile Sidebar Navigation */
 @media (max-width: 768px) {
   .navbar {
     width: auto;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 20px;
     right: 20px;
     left: auto;
@@ -336,7 +341,7 @@ background-clip: text;
   .nav-links {
     position: fixed !important;
     top: 0 !important;
-    right: -100% !important;
+    right: -280px !important;
     left: auto !important;
     width: 280px !important;
     height: 100vh !important;
@@ -345,8 +350,8 @@ background-clip: text;
     -webkit-backdrop-filter: blur(20px) !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding: 100px 40px 40px !important;
-    gap: 2rem !important;
+    padding: 80px 30px 40px !important;
+    gap: 0.8rem !important;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     border-left: 1px solid rgba(65, 105, 225, 0.3) !important;
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5) !important;
@@ -369,9 +374,9 @@ background-clip: text;
   .nav-links a {
     display: block;
     width: 100%;
-    padding: 1rem 1.5rem;
-    font-size: 1.3rem;
-    border-radius: 12px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
     transition: all 0.3s ease;
     color: white;
     -webkit-text-fill-color: white;
@@ -396,11 +401,39 @@ background-clip: text;
     display: none;
   }
 
+  /* Sidebar Header - Mobile Only */
+  .sidebar-header {
+    display: block;
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(65, 105, 225, 0.3);
+  }
+
+  .sidebar-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #add8e6, #4169E1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 8px 0;
+  }
+
+  .sidebar-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-weight: 400;
+  }
+
   /* Hero Section Mobile */
   .container {
     flex-direction: column;
     padding: 100px 20px 50px;
-    gap: 40px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
   }
@@ -424,28 +457,33 @@ background-clip: text;
 
   .glass-card {
     width: 200px;
-    height: 200px;
+    height: 280px;
     margin: 0 auto;
   }
 
   .glass-card img {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .content h1 {
     font-size: 3rem;
     text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   #description-text {
     font-size: 1.2rem;
     text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .small-description {
     font-size: 1rem;
     text-align: center;
+    margin-top: 0.5rem;
   }
 
   .social-links {
@@ -499,8 +537,9 @@ background-clip: text;
   }
 
   .about-column h4 {
-    font-size: 1.3rem;
+    font-size: 1.5rem !important;
     margin-top: 15px;
+    color: #25abe4;
     margin-bottom: 10px;
     text-align: left;
   }
@@ -557,10 +596,13 @@ background-clip: text;
   .certifications-grid {
     grid-template-columns: 1fr;
     gap: 25px;
+    justify-items: center;
   }
 
   .certification-item {
     padding: 25px;
+    width: 100%;
+    max-width: 400px;
   }
 
   .cert-image-placeholder {
@@ -747,6 +789,19 @@ background-clip: text;
   border-radius: 50%;
   background: #87ceeb;
   border: 2px solid #111;
+}
+
+/* Mobile Education Section Fix */
+@media (max-width: 768px) {
+  .education-item {
+    padding-left: 20px;
+    border-left: 2px solid #87ceeb;
+    margin-left: 10px;
+  }
+
+  .education-item::before {
+    left: -11px;
+  }
 }
 
 .education-item h4 {
@@ -2905,5 +2960,37 @@ background-clip: text;
   .cancel-btn {
     padding: 14px 25px;
     font-size: 0.9rem;
+  }
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+.footer {
+  position: relative;
+  padding: 30px 20px;
+  text-align: center;
+  background: transparent;
+  border-top: 1px solid rgba(65, 105, 225, 0.2);
+  z-index: 2;
+}
+
+.footer p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 25px 15px;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
   }
 }

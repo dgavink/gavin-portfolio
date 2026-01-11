@@ -16,7 +16,7 @@
       @media (max-width: 768px) {
         .nav-links {
           position: fixed !important;
-          right: -100% !important;
+          right: -280px !important;
           left: auto !important;
           top: 0 !important;
           pointer-events: none !important;
@@ -25,7 +25,7 @@
         }
         .nav-links:not(.active) {
           display: flex !important;
-          right: -100% !important;
+          right: -280px !important;
         }
         .sidebar-overlay {
           display: none !important;
@@ -60,6 +60,10 @@
         <span></span>
       </button>
       <ul class="nav-links">
+        <div class="sidebar-header">
+          <h2 class="sidebar-name">Gavin Kahanda</h2>
+          <p class="sidebar-title">Software Engineer Undergraduate</p>
+        </div>
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -587,6 +591,12 @@
     </div>
 
     <div class="glowing-circle"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>gavin kahanda . 2025</p>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
