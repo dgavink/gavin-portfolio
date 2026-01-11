@@ -627,6 +627,8 @@ gsap.set(".glass-card", { opacity: 0, x: -100, scale: 0.9 });
 gsap.set(".content h1", { opacity: 0, y: 50 });
 gsap.set("#description-text", { opacity: 1 }); // Keep visible for typing
 gsap.set(".small-description", { opacity: 1 }); // Keep visible for typing
+gsap.set(".hero-actions", { opacity: 0, y: 20 });
+gsap.set(".view-work-btn", { opacity: 0, scale: 0.9 });
 gsap.set(".social-links", { opacity: 0, y: 20 });
 gsap.set(".navbar", { opacity: 0, y: -20 });
 
@@ -668,12 +670,24 @@ tl.to(".navbar", {
   },
   ease: "none",
 }, "-=0.8")
-.to(".social-links", {
+.to(".hero-actions", {
   duration: 0.8,
   opacity: 1,
   y: 0,
   ease: "power2.out"
-}, "-=1");
+}, "-=1")
+.to(".view-work-btn", {
+  duration: 0.6,
+  opacity: 1,
+  scale: 1,
+  ease: "back.out(1.5)"
+}, "-=0.6")
+.to(".social-links", {
+  duration: 0.6,
+  opacity: 1,
+  y: 0,
+  ease: "power2.out"
+}, "-=0.4");
 
 // GSAP Animations for About Section
 const aboutMeDescriptionElement = document.getElementById('about-me-description');
