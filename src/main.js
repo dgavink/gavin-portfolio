@@ -847,7 +847,7 @@ const portfolioProjects = {
     description: 'An informational webpage serving as the official rulebook for a Call of Duty Mobile esports tournament held at our university.',
     fullDetails: 'COD Mobile Rulebook is a comprehensive informational webpage created for a Call of Duty Mobile esports tournament organized by QuantumRift at our university. The page features a cyberpunk-themed interface with purple neon styling, providing participants with all essential tournament information. It covers game modes (Search & Destroy), detailed gameplay rules including banned items such as legendary weapon skins and specific operator skills, the competitive map pool featuring Summit, Standoff, Raid, and other popular maps, as well as registered team rosters. The rulebook ensures fair play by clearly outlining prohibited practices like exploiting bugs, using third-party software, and match-fixing.',
     status: ['Informational-frontend'],
-    techStack: ['HTML', 'CSS'],
+    techStack: ['HTML', 'CSS', 'js'],
     photos: [
       '/cod.png',
       '/cod1.png',
@@ -857,6 +857,30 @@ const portfolioProjects = {
     links: {
       github: null,
       live: 'https://codmrulesqr25.netlify.app/'
+    }
+  },
+
+  itclubhub: {
+    id: 'itclubhub',
+    title: 'IT Club Resource Hub',
+    tagline: 'Academic Resource Hub for LNBTI IT Club',
+    description: 'A bilingual prototype web frontend serving as an academic resource hub for the IT Club of our university, available in both English and Japanese.',
+    fullDetails: 'IT Club Resource Hub is a prototype web frontend developed for the Information Technology Club at Lanka Nippon Biztech Institute (LNBTI). This bilingual platform serves as a centralized knowledge center for students, offering easy access to academic resources in both English and Japanese languages. The hub features organized course materials for Software Engineering (SE) and UOG programs, searchable lecture notes categorized by batch, and real-world case studies spanning various industries including healthcare AI implementations and data structure algorithms. The platform also provides information about club activities such as workshops, seminars, hackathons, competitions, and networking events, fostering a collaborative environment for IT students and faculty.',
+    status: 'Prototype',
+    techStack: ['HTML', 'CSS'],
+    photos: [
+      '/it0.png',
+      '/it1.png',
+      '/it2.png',
+      '/it3.png',
+      '/it4.png',
+      '/it5.png',
+      '/it6.png',
+      '/it7.png'
+    ],
+    links: {
+      github: null,
+      live: 'https://reshubit.netlify.app/'
     }
   }
 };
@@ -1309,6 +1333,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Societies Section - Stagger animation
+  const societiesSection = document.getElementById('societies');
+  if (societiesSection) {
+    const societyItems = societiesSection.querySelectorAll('.society-item');
+    societyItems.forEach((item, index) => {
+      item.classList.add('fade-in-section');
+      item.style.transitionDelay = `${index * 0.1}s`;
+      animateOnScroll.observe(item);
+    });
+  }
+
   // Certifications Section - Stagger animation
   const certificationsSection = document.getElementById('certifications');
   if (certificationsSection) {
@@ -1498,6 +1533,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       else if (projectCard.classList.contains('codmrulebook-card')) {
         projectId = 'codmrulebook';
+      }
+      else if (projectCard.classList.contains('itclubhub-card')) {
+        projectId = 'itclubhub';
       }
 
       if (projectId) {

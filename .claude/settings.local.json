@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:codmrulesqr25.netlify.app)"
+      "WebFetch(domain:codmrulesqr25.netlify.app)",
+      "WebFetch(domain:reshubit.netlify.app)"
     ]
   }
 }

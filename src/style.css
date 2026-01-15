@@ -583,17 +583,17 @@ background-clip: text;
   }
 
   /* Project Cards Mobile - Stack Image and Text */
-  .apparelgenesis-card, .rydora-card, .flymate-card, .justicehire-card, .nexusgalleria-card, .newshub-card, .codmrulebook-card {
+  .apparelgenesis-card, .rydora-card, .flymate-card, .justicehire-card, .nexusgalleria-card, .newshub-card, .codmrulebook-card, .itclubhub-card {
     flex-direction: column;
   }
 
-  .apparelgenesis-image-content, .rydora-image-content, .flymate-image-content, .justicehire-image-content, .nexusgalleria-image-content, .newshub-image-content, .codmrulebook-image-content {
+  .apparelgenesis-image-content, .rydora-image-content, .flymate-image-content, .justicehire-image-content, .nexusgalleria-image-content, .newshub-image-content, .codmrulebook-image-content, .itclubhub-image-content {
     flex: 1;
     max-width: 100%;
     width: 100%;
   }
 
-  .apparelgenesis-text-content, .rydora-text-content, .flymate-text-content, .justicehire-text-content, .nexusgalleria-text-content, .newshub-text-content, .codmrulebook-text-content {
+  .apparelgenesis-text-content, .rydora-text-content, .flymate-text-content, .justicehire-text-content, .nexusgalleria-text-content, .newshub-text-content, .codmrulebook-text-content, .itclubhub-text-content {
     width: 100%;
   }
 
@@ -1505,6 +1505,221 @@ background-clip: text;
   }
 }
 
+/* ===================================
+   SOCIETIES & ORGANIZATIONS SECTION
+   =================================== */
+.societies-section {
+  padding: 80px 50px;
+  position: relative;
+  min-height: auto;
+}
+
+.societies-section h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #1a43bf;
+  text-align: center;
+}
+
+.societies-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.societies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.society-item {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.society-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #4169E1, #8b7fc7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.society-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(65, 105, 225, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.society-item:hover::before {
+  opacity: 1;
+}
+
+.society-logo {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.society-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+}
+
+.society-item:hover .society-logo {
+  transform: scale(1.1);
+  border-color: rgba(65, 105, 225, 0.4);
+}
+
+.society-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.society-role {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #add8e6, #4169E1, #8b7fc7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.society-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.society-org {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.society-duration {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #4169E1;
+  margin-top: 4px;
+}
+
+.society-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.society-badge.current {
+  background: rgba(65, 105, 225, 0.2);
+  color: #add8e6;
+  border: 1px solid rgba(65, 105, 225, 0.4);
+}
+
+.society-badge.past {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Societies Responsive */
+@media (max-width: 768px) {
+  .societies-section {
+    padding: 60px 20px;
+  }
+
+  .societies-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .societies-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .societies-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .society-item {
+    padding: 20px;
+  }
+
+  .society-logo {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .society-name {
+    font-size: 1.15rem;
+  }
+
+  .society-org {
+    font-size: 0.9rem;
+  }
+
+  .society-badge {
+    top: 12px;
+    right: 12px;
+    padding: 3px 10px;
+    font-size: 0.65rem;
+  }
+}
+
 /* CERTIFICATIONS SECTION */
 .certifications-section {
   padding: 60px 50px 50px;
@@ -1599,22 +1814,22 @@ background-clip: text;
   }
 }
 
-.apparelgenesis-card, .rydora-card, .flymate-card, .justicehire-card, .nexusgalleria-card, .newshub-card, .codmrulebook-card {
+.apparelgenesis-card, .rydora-card, .flymate-card, .justicehire-card, .nexusgalleria-card, .newshub-card, .codmrulebook-card, .itclubhub-card {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.apparelgenesis-text-content, .rydora-text-content, .flymate-text-content, .justicehire-text-content, .nexusgalleria-text-content, .newshub-text-content, .codmrulebook-text-content {
+.apparelgenesis-text-content, .rydora-text-content, .flymate-text-content, .justicehire-text-content, .nexusgalleria-text-content, .newshub-text-content, .codmrulebook-text-content, .itclubhub-text-content {
     flex: 1;
 }
 
-.apparelgenesis-image-content, .rydora-image-content, .flymate-image-content, .justicehire-image-content, .nexusgalleria-image-content, .newshub-image-content, .codmrulebook-image-content {
+.apparelgenesis-image-content, .rydora-image-content, .flymate-image-content, .justicehire-image-content, .nexusgalleria-image-content, .newshub-image-content, .codmrulebook-image-content, .itclubhub-image-content {
     flex: 0 0 40%; /* Adjust width as needed */
     max-width: 40%;
 }
 
-.apparelgenesis-image-content img, .rydora-image-content img, .flymate-image-content img, .justicehire-image-content img, .nexusgalleria-image-content img, .newshub-image-content img, .codmrulebook-image-content img {
+.apparelgenesis-image-content img, .rydora-image-content img, .flymate-image-content img, .justicehire-image-content img, .nexusgalleria-image-content img, .newshub-image-content img, .codmrulebook-image-content img, .itclubhub-image-content img {
     width: 100%;
     border-radius: 15px;
 }
