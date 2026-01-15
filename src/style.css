@@ -583,17 +583,17 @@ background-clip: text;
   }
 
   /* Project Cards Mobile - Stack Image and Text */
-  .apparelgenesis-card, .rydora-card, .flymate-card, .justicehire-card, .nexusgalleria-card {
+  .apparelgenesis-card, .rydora-card, .flymate-card, .justicehire-card, .nexusgalleria-card, .newshub-card, .codmrulebook-card {
     flex-direction: column;
   }
 
-  .apparelgenesis-image-content, .rydora-image-content, .flymate-image-content, .justicehire-image-content, .nexusgalleria-image-content {
+  .apparelgenesis-image-content, .rydora-image-content, .flymate-image-content, .justicehire-image-content, .nexusgalleria-image-content, .newshub-image-content, .codmrulebook-image-content {
     flex: 1;
     max-width: 100%;
     width: 100%;
   }
 
-  .apparelgenesis-text-content, .rydora-text-content, .flymate-text-content, .justicehire-text-content, .nexusgalleria-text-content {
+  .apparelgenesis-text-content, .rydora-text-content, .flymate-text-content, .justicehire-text-content, .nexusgalleria-text-content, .newshub-text-content, .codmrulebook-text-content {
     width: 100%;
   }
 
@@ -1599,22 +1599,22 @@ background-clip: text;
   }
 }
 
-.apparelgenesis-card, .rydora-card, .flymate-card, .justicehire-card, .nexusgalleria-card {
+.apparelgenesis-card, .rydora-card, .flymate-card, .justicehire-card, .nexusgalleria-card, .newshub-card, .codmrulebook-card {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.apparelgenesis-text-content, .rydora-text-content, .flymate-text-content, .justicehire-text-content, .nexusgalleria-text-content {
+.apparelgenesis-text-content, .rydora-text-content, .flymate-text-content, .justicehire-text-content, .nexusgalleria-text-content, .newshub-text-content, .codmrulebook-text-content {
     flex: 1;
 }
 
-.apparelgenesis-image-content, .rydora-image-content, .flymate-image-content, .justicehire-image-content, .nexusgalleria-image-content {
+.apparelgenesis-image-content, .rydora-image-content, .flymate-image-content, .justicehire-image-content, .nexusgalleria-image-content, .newshub-image-content, .codmrulebook-image-content {
     flex: 0 0 40%; /* Adjust width as needed */
     max-width: 40%;
 }
 
-.apparelgenesis-image-content img, .rydora-image-content img, .flymate-image-content img, .justicehire-image-content img, .nexusgalleria-image-content img {
+.apparelgenesis-image-content img, .rydora-image-content img, .flymate-image-content img, .justicehire-image-content img, .nexusgalleria-image-content img, .newshub-image-content img, .codmrulebook-image-content img {
     width: 100%;
     border-radius: 15px;
 }

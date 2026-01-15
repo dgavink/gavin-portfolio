@@ -733,7 +733,7 @@ const portfolioProjects = {
       '/a9.png'
     ],
     links: {
-      github: 'https://github.com/yourusername/apparelgenesis',
+      github: 'https://github.com/dgavink/Apparel-Genesis',
       live: null
     }
   },
@@ -754,7 +754,7 @@ const portfolioProjects = {
       '/r6.jpg'
     ],
     links: {
-      github: 'https://github.com/yourusername/rydora',
+      github: 'https://github.com/dgavink/Rydora-mobile',
       live: 'https://rydora-demo.com'
     }
   },
@@ -774,7 +774,7 @@ const portfolioProjects = {
       '/f5.png'
     ],
     links: {
-      github: 'https://github.com/yourusername/flymate',
+      github: 'https://github.com/dgavink/Flymate',
       live: 'https://flymate-demo.com'
     }
   },
@@ -784,7 +784,7 @@ const portfolioProjects = {
     tagline: 'Website to Hire Attorneys Online',
     description: 'A full-stack web application designed to revolutionize the legal hiring process in Sri Lanka. This platform enables clients to find, consult, and hire attorneys online.',
     fullDetails: 'JusticeHire is a comprehensive legal services platform that connects clients with qualified attorneys. Features include attorney profiles, practice area filtering, online consultation booking, secure document sharing, case management, and integrated payment processing. The platform aims to make legal services more accessible and transparent.',
-    status: 'Beta Testing',
+    status: 'Completed',
     techStack: ['Full-Stack', 'Node.js', 'MongoDB', 'Socket.io', 'Stripe'],
     photos: [
       '/j1.png',
@@ -795,8 +795,8 @@ const portfolioProjects = {
       '/j6.png'
     ],
     links: {
-      github: 'https://github.com/yourusername/justicehire',
-      live: 'https://justicehire-demo.com'
+      github: 'https://github.com/dgavink/JusticeHire',
+      live: 'https://justicehire.netlify.app/'
     }
   },
   nexusgalleria: {
@@ -806,7 +806,7 @@ const portfolioProjects = {
     description: 'Created a desktop app to buy and sell artworks through both direct and auction methods. Built using C++.',
     fullDetails: 'NexusGalleria is a sophisticated desktop application that brings the art gallery experience to your computer. It features a virtual gallery space, real-time auction system, secure payment processing, artist portfolio management, and artwork authentication. Built with modern C++ and Qt framework for a rich user interface.',
     status: 'Completed',
-    techStack: ['C++', 'Qt Framework', 'SQLite', 'OpenGL', 'Blockchain'],
+    techStack: ['C#','Desktop App'],
     photos: [
       '/n1.png',
       '/n2.png',
@@ -816,8 +816,47 @@ const portfolioProjects = {
       '/n6.png'
     ],
     links: {
-      github: 'https://github.com/yourusername/nexusgalleria',
+      github: 'https://github.com/dgavink/NexusGalleria',
       live: null
+    }
+  },
+
+  newshub: {
+    id: 'newshub',
+    title: 'NewsHub',
+    tagline: 'Worldwide news webpage',
+    description: 'A webpage to see news information worldwide by searching for a single keyword. fetched real time information using API',
+    fullDetails: 'Newshub by Gavin, is a Webpage that the user can view realtime information from just 1 place. The user should search a keyword that they want to get the information about and through an API, the releted news info is fetched. ',
+    status: 'Completed',
+    techStack: ['HTML', 'CSS'],
+    photos: [
+      '/newshub.png',
+      '/nh1.png',
+      '/nh2.png'
+    ],
+    links: {
+      github: 'https://github.com/dgavink/NewsHub',
+      live: 'https://newshub-by-gavin.netlify.app/'
+    }
+  },
+
+  codmrulebook: {
+    id: 'codmrulebook',
+    title: 'COD Mobile Rulebook',
+    tagline: 'Tournament Rulebook for Call of Duty Mobile Esports',
+    description: 'An informational webpage serving as the official rulebook for a Call of Duty Mobile esports tournament held at our university.',
+    fullDetails: 'COD Mobile Rulebook is a comprehensive informational webpage created for a Call of Duty Mobile esports tournament organized by QuantumRift at our university. The page features a cyberpunk-themed interface with purple neon styling, providing participants with all essential tournament information. It covers game modes (Search & Destroy), detailed gameplay rules including banned items such as legendary weapon skins and specific operator skills, the competitive map pool featuring Summit, Standoff, Raid, and other popular maps, as well as registered team rosters. The rulebook ensures fair play by clearly outlining prohibited practices like exploiting bugs, using third-party software, and match-fixing.',
+    status: ['Informational-frontend'],
+    techStack: ['HTML', 'CSS'],
+    photos: [
+      '/cod.png',
+      '/cod1.png',
+      '/cod2.png',
+      '/cod3.png'
+    ],
+    links: {
+      github: null,
+      live: 'https://codmrulesqr25.netlify.app/'
     }
   }
 };
@@ -1453,6 +1492,12 @@ document.addEventListener('DOMContentLoaded', () => {
         projectId = 'justicehire';
       } else if (projectCard.classList.contains('nexusgalleria-card')) {
         projectId = 'nexusgalleria';
+      }
+      else if (projectCard.classList.contains('newshub-card')) {
+        projectId = 'newshub';
+      }
+      else if (projectCard.classList.contains('codmrulebook-card')) {
+        projectId = 'codmrulebook';
       }
 
       if (projectId) {
