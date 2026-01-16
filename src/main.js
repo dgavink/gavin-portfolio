@@ -1549,6 +1549,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // MESSAGE MODAL FUNCTIONALITY
 // ============================================
 
+// EmailJS Configuration
+// IMPORTANT: Replace these with your actual EmailJS credentials
+const EMAILJS_PUBLIC_KEY = 'YvQoknqb7FpQFSOqh';  // Get from EmailJS dashboard
+const EMAILJS_SERVICE_ID = 'service_s3rbsjx';  // Get from EmailJS dashboard
+const EMAILJS_TEMPLATE_ID = 'template_rwe7nzb'; // Get from EmailJS dashboard
+
+// Initialize EmailJS
+if (typeof emailjs !== 'undefined') {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
 function openMessageModal() {
   const modal = document.getElementById('message-modal');
   modal.classList.add('active');
@@ -1567,29 +1578,63 @@ function closeMessageModal() {
   }
 }
 
-// Handle form submission
+// Handle form submission with EmailJS
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Get the submit button and store original text
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.innerHTML;
+
+    // Show loading state
+    submitBtn.innerHTML = '<span>Sending...</span>';
+    submitBtn.disabled = true;
+
     // Get form data
-    const formData = {
-      name: document.getElementById('contact-name').value,
-      email: document.getElementById('contact-email').value,
+    const templateParams = {
+      from_name: document.getElementById('contact-name').value,
+      from_email: document.getElementById('contact-email').value,
       subject: document.getElementById('contact-subject').value,
-      message: document.getElementById('contact-message').value
+      message: document.getElementById('contact-message').value,
+      to_email: 'dgavink12@gmail.com'
     };
 
-    // Here you can add your email sending logic
-    // For now, we'll just log it and show a success message
-    console.log('Form submitted:', formData);
+    // Send email using EmailJS
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(function(response) {
+        console.log('Email sent successfully!', response.status, response.text);
 
-    // Show success message (you can customize this)
-    alert('Message sent successfully! I\'ll get back to you soon.');
+        // Show success state
+        submitBtn.innerHTML = '<span>Message Sent!</span>';
+        submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
 
-    // Close modal and reset form
-    closeMessageModal();
+        // Close modal after delay
+        setTimeout(() => {
+          closeMessageModal();
+          // Reset button
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 1500);
+      })
+      .catch(function(error) {
+        console.error('Failed to send email:', error);
+
+        // Show error state
+        submitBtn.innerHTML = '<span>Failed to send</span>';
+        submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+
+        // Reset button after delay
+        setTimeout(() => {
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 2000);
+
+        alert('Failed to send message. Please try again or contact me directly at dgavink12@gmail.com');
+      });
   });
 }
 
